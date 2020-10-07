@@ -1,0 +1,23 @@
+<div class="container text-center">
+    <h2>Actores</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Sexo</th>
+                <th>Fecha Nacimiento</th>
+                <th>Foto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listaActores" (click)="SeleccionarActor(item)">
+                <td>{{ item.nombre }}</td>
+                <td>{{item.apellido}}</td>
+                <td>{{item.sexo}}</td>
+                <td>{{item.fecha_de_nacimiento}}</td>
+                <td> <img [src]="item.foto" alt="" height="100vh" width="150vw"> </td>
+            </tr>
+        </tbody>        
+    </table>
+</div>

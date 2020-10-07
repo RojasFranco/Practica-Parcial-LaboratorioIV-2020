@@ -1,0 +1,14 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-9">
+            <app-tabla-pelicula (eventElegirPelicula) = "ElegirPelicula($event)"></app-tabla-pelicula>
+        </div>
+        <div class="col">
+            <app-detalle-pelicula (eventoBorrarPelicula)="EliminarPelicula($event)" [peliculaCargada] = "peliculaSeleccionada" [borradoHabilitado] = "1"></app-detalle-pelicula>
+            <div class="alert alert-success" *ngIf="mostrarMje">
+                Pelicula eliminada correctamente
+            </div>
+        </div>
+    </div>    
+</div>

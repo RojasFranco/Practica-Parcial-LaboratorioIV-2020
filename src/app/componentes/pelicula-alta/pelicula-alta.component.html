@@ -1,0 +1,58 @@
+<div class="container-fluid row my-2">
+    <div class="col-9">
+        <form >
+            <fieldset>
+                <legend>Agregar Pelicula</legend>
+            </fieldset>
+        
+            <div class="form-group">
+                <label for="">Nombre</label>
+                <input type="text" [(ngModel)]="nombrePelicula" class="form-control" name="nombre" placeholder="Ingrese el nombre de la pelicula...">
+            </div>
+        
+            <div class="form-group">
+                <label for="">Seleccione el tipo</label>
+                <select class="form-control" [(ngModel)]="tipoElegido" name="selectTipo">
+                    <option value="{{item}}" *ngFor="let item of tiposPelicula">{{item}}</option>
+                </select>
+            </div>
+        
+            <div class="form-group">
+                <label for="">Fecha estreno</label>
+                <input type="date" [(ngModel)]="fechaEstreno" name="fecha" id="" class="form-control">
+            </div>
+        
+            <div class="form-group">
+                <label for="">Cantidad De Publico</label>
+                <input type="text" [(ngModel)]="cantidadPublico" name="cantPublico" class="form-control" placeholder="Ingrese la cantidad de publico...">
+            </div>
+        
+            <div class="row justify-content-center">
+                <button (click)="AgregarPelicula()" class="btn btn-primary">Crear</button>
+            </div>
+            <div [ngClass]="claseMensaje" *ngIf="mostrarError">
+                {{mensajeError}}
+            </div>
+        </form>
+    </div>
+    <div class="col-3 text-center">
+        <h3>Actor Elegido</h3>
+        <div class="container mt-3 col-10" *ngIf="actorElegido; else noEligioActor">
+            <div class="container border p-0">
+                <img [src]="actorElegido.foto" height="100vh" width="100%" alt="">
+                <ul>
+                    <li>{{actorElegido.nombre}}</li>
+                    <li>{{ actorElegido.apellido }}</li>
+                    <li>{{actorElegido.sexo}}</li>
+                    <li>{{actorElegido.fecha_de_nacimiento}}</li>                    
+                </ul>
+            </div>
+        </div>
+        <ng-template #noEligioActor>
+            <p>Aun no eligio actor</p>
+        </ng-template>
+        
+    </div>
+</div>
+
+<app-tabla-actor (eventoSeleccionarActor) = "CargarActor($event)"></app-tabla-actor>
