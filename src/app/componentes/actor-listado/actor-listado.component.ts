@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Actor } from 'src/app/clases/actor';
 
 @Component({
   selector: 'app-actor-listado',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActorListadoComponent implements OnInit {
 
+  actorElegido: Actor;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  SeleccionarActor(actor: Actor){
+    this.actorElegido = actor;
+  }
+
+  actualizar(recibido: boolean){
+    this.actorElegido = null;
   }
 
 }

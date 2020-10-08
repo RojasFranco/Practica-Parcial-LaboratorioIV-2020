@@ -1,0 +1,18 @@
+<div  class="container mt-5 text-center">    
+    <div *ngIf="actorElegido" class="card mb-4 shadow-sm">  
+      <img [src]="actorElegido.foto" height="150vh">
+      <div class="card-body px-0" >
+        <ul class="ulListado">
+            <li>Nombre: {{ actorElegido.nombre }}</li>
+            <li>Apellido: {{ actorElegido.apellido }}</li>
+            <li>Fecha de nacimiento: {{actorElegido.fecha_de_nacimiento}}</li>
+            <li>Sexo: {{ actorElegido.sexo }}</li>
+            <li>Nacionalidad: {{ actorElegido.nacionalidad }}</li>
+        </ul>                                  
+          
+        <button *ngIf="permitirBorrado" (click)="BorrarActor()" class="btn btn-danger">Borrar</button>
+      </div>
+    </div>
+    
+  </div>
+  

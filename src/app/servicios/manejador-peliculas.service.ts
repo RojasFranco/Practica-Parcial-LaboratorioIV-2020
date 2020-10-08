@@ -32,8 +32,16 @@ export class ManejadorPeliculasService {
     this.bbdd.ActualizarDato(this.coleccion, id, peliculaModificada);
   }
 
+  ActualizarActor(id: string, actorModificado: Actor){
+    this.bbdd.ActualizarDato("actores", id, actorModificado);
+  }
+
   BorrarPelicula(id: string){
     this.bbdd.BorrarDato(this.coleccion, id);
+  }
+
+  BorrarActor(id:string){
+    this.bbdd.BorrarDato("actores", id);
   }
 
   async ObtenerTodasLasPeliculas(){

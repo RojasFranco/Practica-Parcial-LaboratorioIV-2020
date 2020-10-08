@@ -20,6 +20,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth'
 import { environment } from 'src/environments/environment';
 import { HttpClientModule} from '@angular/common/http';
 import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';
+import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component';
+import { ActualizarActorComponent } from './componentes/actualizar-actor/actualizar-actor.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.co
     DetallePeliculaComponent,
     TablaActorComponent,
     TablaPaisesComponent,
+    DetalleActorComponent,
+    ActualizarActorComponent,
   ],
   imports: [
     BrowserModule,

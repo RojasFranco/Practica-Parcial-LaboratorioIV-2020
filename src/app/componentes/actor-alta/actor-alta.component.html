@@ -1,5 +1,5 @@
 <div class="container-fluid row my-2">
-    <div class="col-9">
+    <div class="col">
         <form >
             <fieldset class="text-center">
                 <legend>Agregar Actor</legend>
@@ -35,23 +35,24 @@
             </div>
         </form>
     </div>
-
-    <div class="col-3 text-center">
-        <h3 class="mb-4">Pais Elegido</h3>
-        <div class="container mt-3" *ngIf="paisElegido; else noEligioActor">
-            <div class="container border p-0">
-                <img [src]="paisElegido.flag" height="140vh" width="100%" alt="">
-                <ul class="ulListado mt-2">
-                    <li>Pais: {{paisElegido.name}}</li>
-                    <li>Capital: {{ paisElegido.capital }}</li>                  
-                </ul>
-            </div>
-        </div>
-        <ng-template #noEligioActor>
-            <p>Aun no eligio pais</p>
-        </ng-template>
-        
+    <div class="col">
+        <app-tabla-paises (eventoElegirPais) = "ElegirPais($event)"></app-tabla-paises>
     </div>
 </div>
 
-<app-tabla-paises (eventoElegirPais) = "ElegirPais($event)"></app-tabla-paises>
+<div class="col-3 text-center">
+    <h3 class="mb-4">Pais Elegido</h3>
+    <div class="container mt-3" *ngIf="paisElegido; else noEligioActor">
+        <div class="container border p-0">
+            <img [src]="paisElegido.flag" height="140vh" width="100%" alt="">
+            <ul class="ulListado mt-2">
+                <li>Pais: {{paisElegido.name}}</li>
+                <li>Capital: {{ paisElegido.capital }}</li>                  
+            </ul>
+        </div>
+    </div>
+    <ng-template #noEligioActor>
+        <p>Aun no eligio pais</p>
+    </ng-template>
+    
+</div>

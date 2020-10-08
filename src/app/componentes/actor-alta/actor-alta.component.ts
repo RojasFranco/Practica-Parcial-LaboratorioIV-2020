@@ -59,6 +59,7 @@ export class ActorAltaComponent implements OnInit {
       apellido: actor.apellido,
       fecha_nacimiento: actor.fecha_de_nacimiento,
       sexo: actor.sexo,
+      nacionalidad: this.paisElegido.name,
       pais: {
         pais: this.paisElegido.name,
         capital: this.paisElegido.capital

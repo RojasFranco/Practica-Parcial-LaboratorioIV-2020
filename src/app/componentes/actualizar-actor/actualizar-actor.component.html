@@ -1,0 +1,18 @@
+<div  class="container mt-5 text-center">    
+    <div *ngIf="actorElegido" class="card mb-4 shadow-sm">  
+      <img [src]="actorElegido.foto" height="150vh">
+      <div class="card-body pr-3" >
+        <ul class="ulListado">
+            <li>Nombre: <input type="text" [(ngModel)]="nombre" class="form-control" placeholder="nuevo nombre..."></li>
+            <li>Apellido: <input type="text" [(ngModel)]="apellido" class="form-control"  placeholder="nuevo apellido..."></li>
+            <li>Fecha de nacimiento: <input type="date" [(ngModel)]="fecha_nacimiento" class="form-control" ></li>
+            <li>Sexo: <input type="text" [(ngModel)]="sexo"  placeholder="nuevo sexo..." class="form-control" ></li>
+            <li>Nacionalidad: <input type="text" [(ngModel)]="nacionalidad" placeholder="nacionalidad..." class="form-control" ></li>
+        </ul>                                  
+          
+        <button (click)="Modificar()" class="btn btn-warning">Modificar</button>
+      </div>
+    </div>
+    
+  </div>
+  
