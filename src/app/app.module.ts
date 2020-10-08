@@ -18,6 +18,8 @@ import { TablaActorComponent } from './componentes/tabla-actor/tabla-actor.compo
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth'
 import { environment } from 'src/environments/environment';
+import { HttpClientModule} from '@angular/common/http';
+import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { environment } from 'src/environments/environment';
     TablaPeliculaComponent,
     DetallePeliculaComponent,
     TablaActorComponent,
+    TablaPaisesComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { environment } from 'src/environments/environment';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

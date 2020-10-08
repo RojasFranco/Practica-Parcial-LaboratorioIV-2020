@@ -1,1 +1,57 @@
-<p>actor-alta works!</p>
+<div class="container-fluid row my-2">
+    <div class="col-9">
+        <form >
+            <fieldset class="text-center">
+                <legend>Agregar Actor</legend>
+            </fieldset>
+        
+            <div class="form-group">
+                <label for="">Nombre</label>
+                <input type="text" [(ngModel)]="nombreActor" class="form-control" name="nombre" placeholder="Ingrese el nombre del actor...">
+            </div>
+                    
+            <div class="form-group">
+                <label for="">Apellido</label>
+                <input type="text" [(ngModel)]="apellido" class="form-control" name="apellido" placeholder="Ingrese el nombre del actor...">
+            </div>
+        
+            <div class="form-group">
+                <label for="">Seleccione el sexo</label>
+                <select class="form-control" [(ngModel)]="sexoElegido" name="selectTipo">
+                    <option value="{{item}}" *ngFor="let item of sexoDisponible">{{item}}</option>
+                </select>
+            </div>
+        
+            <div class="form-group">
+                <label for="">Fecha de nacimiento</label>
+                <input type="date" [(ngModel)]="fecha_nacimiento" name="fecha" id="" class="form-control">
+            </div>
+        
+            <div class="row justify-content-center">
+                <button (click)="AgregarActor()" class="btn btn-primary">Agregar</button>
+            </div>
+            <div [ngClass]="claseMensaje" *ngIf="mostrarError">
+                {{mensajeError}}
+            </div>
+        </form>
+    </div>
+
+    <div class="col-3 text-center">
+        <h3 class="mb-4">Pais Elegido</h3>
+        <div class="container mt-3" *ngIf="paisElegido; else noEligioActor">
+            <div class="container border p-0">
+                <img [src]="paisElegido.flag" height="140vh" width="100%" alt="">
+                <ul class="ulListado mt-2">
+                    <li>Pais: {{paisElegido.name}}</li>
+                    <li>Capital: {{ paisElegido.capital }}</li>                  
+                </ul>
+            </div>
+        </div>
+        <ng-template #noEligioActor>
+            <p>Aun no eligio pais</p>
+        </ng-template>
+        
+    </div>
+</div>
+
+<app-tabla-paises (eventoElegirPais) = "ElegirPais($event)"></app-tabla-paises>

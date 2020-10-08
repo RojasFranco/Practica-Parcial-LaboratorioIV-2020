@@ -1,0 +1,15 @@
+<div class="container text-center">
+    <h1>Listado paises</h1>
+    <table class="table text-center mt-3">
+        <tr>
+            <td>Pais</td>
+            <td>Capital</td>
+            <td>Foto</td>
+        </tr>
+        <tr *ngFor = "let pais of listadoPaises" (click)="SeleccionarPais(pais)">
+            <td>{{ pais.name }}</td>
+            <td>{{ pais.capital }}</td>
+            <td><img [src]="pais.flag" alt="" height="50px" width="70px" ></td>
+        </tr>
+    </table>
+</div>
