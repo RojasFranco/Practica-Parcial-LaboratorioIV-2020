@@ -1,14 +1,15 @@
 <div  class="container mt-5 text-center">
-  <h2>Pelicula elegida</h2>
+  <h2 class="mb-4">Pelicula elegida</h2>
   <div *ngIf="peliculaCargada; else noEligioPelicula" class="card mb-4 shadow-sm">  
-    <img [src]="peliculaCargada.foto" height="120vh">
-    <div class="card-body" >
-      <ul>
+    <img [src]="peliculaCargada.foto" height="150vh">
+    <div class="card-body px-0" >
+      <ul class="ulListado">
           <li>Nombre: {{ peliculaCargada.nombre }}</li>
           <li>Tipo: {{ peliculaCargada.tipo }}</li>
           <li>Fecha estreno: {{peliculaCargada.fecha_estreno}}</li>
           <li>Cantidad publico: {{ peliculaCargada.cantidad_publico }}</li>                                        
       </ul>                                  
+        
       <button *ngIf="borradoHabilitado==1" (click)="BorrarPelicula()" class="btn btn-danger">Borrar</button>
     </div>
   </div>
@@ -17,34 +18,3 @@
   </ng-template>
   
 </div>
-
-<!-- <main role="main">
-    <div class="album py-5 bg-light">
-      <div class="container">
-  
-        <div class="row">
-          <div class="col-md-4">
-          </div>
-
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-              <img [src]="peliculaCargada.foto" height="120vh">
-              <div class="card-body" >
-                <ul>
-                    <li>Nombre: {{ peliculaCargada.nombre }}</li>
-                    <li>Tipo: {{ peliculaCargada.tipo }}</li>
-                    <li>Fecha estreno: {{peliculaCargada.fecha_estreno}}</li>
-                    <li>Cantidad publico: {{ peliculaCargada.cantidad_publico }}</li>                                        
-                </ul>                                  
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-4">
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  
-  </main> -->

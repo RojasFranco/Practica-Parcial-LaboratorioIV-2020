@@ -19,6 +19,7 @@ export class TablaPeliculaComponent implements OnInit {
   async ngOnInit(){
     // this.listadoPeliculas = await this.service.ObtenerTodasLasPeliculas(); ESTO ANDA PERO NO EN TIEMPO REAL 
     this.bd.ObtenerTodosTiempoReal("peliculas").subscribe(snap=>{
+      this.listadoPeliculas = [];
       snap.forEach(elemento => {
         let peliculaActual = new Pelicula();
         peliculaActual.id = elemento.payload.doc.id;
@@ -29,7 +30,7 @@ export class TablaPeliculaComponent implements OnInit {
         peliculaActual.foto = elemento.payload.doc.get("foto");
         this.listadoPeliculas.push(peliculaActual);
       });
-    })
+    });
     
   }
 

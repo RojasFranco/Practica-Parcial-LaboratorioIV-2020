@@ -1,9 +1,9 @@
 <!-- <section class="jumbotron text-center"> -->
-    <div class="container">
+    <div class="container text-center mt-3">
       <h1>Listado peliculas</h1>
       <p class="lead text-muted">Listado de todas las peliculas</p>
 
-      <table class="table">
+      <table class="table text-center">
         <tr  class="table-info">
           <th>Nombre</th>
           <th>Tipo</th>
@@ -16,7 +16,7 @@
             <td>{{ item.tipo }}</td>
             <td>{{item.fecha_estreno}}</td>
             <td>{{ item.cantidad_publico }}</td>
-            <td><img [src]="item.foto" height="100vh" width="100vw"></td>
+            <td><img [src]="item.foto" alt="Imagen no disponible" height="100vh" width="100vw"></td>
         </tr>
     </table>
     </div>

@@ -36,15 +36,15 @@
         </form>
     </div>
     <div class="col-3 text-center">
-        <h3>Actor Elegido</h3>
-        <div class="container mt-3 col-10" *ngIf="actorElegido; else noEligioActor">
+        <h3 class="mb-4">Actor Elegido</h3>
+        <div class="container mt-3" *ngIf="actorElegido; else noEligioActor">
             <div class="container border p-0">
-                <img [src]="actorElegido.foto" height="100vh" width="100%" alt="">
-                <ul>
-                    <li>{{actorElegido.nombre}}</li>
-                    <li>{{ actorElegido.apellido }}</li>
-                    <li>{{actorElegido.sexo}}</li>
-                    <li>{{actorElegido.fecha_de_nacimiento}}</li>                    
+                <img [src]="actorElegido.foto" height="140vh" width="100%" alt="">
+                <ul class="ulListado mt-2">
+                    <li>Nombre: {{actorElegido.nombre}}</li>
+                    <li>Apellido: {{ actorElegido.apellido }}</li>
+                    <li>Sexo: {{actorElegido.sexo}}</li>
+                    <li>Fecha nacimiento: {{actorElegido.fecha_de_nacimiento}}</li>                    
                 </ul>
             </div>
         </div>
