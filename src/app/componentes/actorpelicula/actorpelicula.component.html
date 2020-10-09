@@ -1,0 +1,30 @@
+<app-tabla-actor  (eventoSeleccionarActor)= "SeleccionarActor($event)"></app-tabla-actor>
+
+<div class="container">
+
+    <div class="text-center">
+        <h2 *ngIf="!actorElegido; else eligioActor">Aun no selecciono ningun actor</h2>
+        <ng-template #eligioActor>
+            <h2 class="mb-4">Actor elegido</h2>
+        </ng-template>
+    </div>
+
+    <div class="row" *ngIf="mostrarCampos">
+        <div class="col">
+            <!-- <app-detalle-actor [actorElegido] = "actorElegido" [permitirBorrado]="true"></app-detalle-actor> -->
+            <app-tabla-pelicula (actorPedido)="actorElegido"></app-tabla-pelicula>
+            <!-- //actorPedido -->
+            <!-- MOSTRAR PELIS -->
+
+        </div>
+        <div class="col">
+            <!-- <app-detalle-actor [actorElegido] = "actorElegido"></app-detalle-actor> -->
+            <!-- MOSTRAR PAIS -->
+        </div>
+        <div class="col">
+            <app-detalle-actor [actorElegido] = "actorElegido"></app-detalle-actor>
+        </div>    
+
+    </div>
+</div>
+

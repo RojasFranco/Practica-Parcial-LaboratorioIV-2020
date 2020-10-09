@@ -1,5 +1,5 @@
-<div class="container-fluid row my-2">
-    <div class="col-9">
+<div class="container-fluid row mt-2 ">
+    <div class="col">
         <form >
             <fieldset>
                 <legend>Agregar Pelicula</legend>
@@ -35,24 +35,27 @@
             </div>
         </form>
     </div>
-    <div class="col-3 text-center">
-        <h3 class="mb-4">Actor Elegido</h3>
-        <div class="container mt-3" *ngIf="actorElegido; else noEligioActor">
-            <div class="container border p-0">
-                <img [src]="actorElegido.foto" height="140vh" width="100%" alt="">
-                <ul class="ulListado mt-2">
-                    <li>Nombre: {{actorElegido.nombre}}</li>
-                    <li>Apellido: {{ actorElegido.apellido }}</li>
-                    <li>Sexo: {{actorElegido.sexo}}</li>
-                    <li>Fecha nacimiento: {{actorElegido.fecha_de_nacimiento}}</li>                    
-                </ul>
-            </div>
-        </div>
-        <ng-template #noEligioActor>
-            <p>Aun no eligio actor</p>
-        </ng-template>
-        
+
+    <div class="col">
+        <app-tabla-actor (eventoSeleccionarActor) = "CargarActor($event)"></app-tabla-actor>
     </div>
 </div>
 
-<app-tabla-actor (eventoSeleccionarActor) = "CargarActor($event)"></app-tabla-actor>
+<div class="col-3 text-center">
+    <h3 class="mb-4">Actor Elegido</h3>
+    <div class="container mt-3" *ngIf="actorElegido; else noEligioActor">
+        <div class="container border p-0">
+            <img [src]="actorElegido.foto" height="140vh" width="100%" alt="">
+            <ul class="ulListado mt-2">
+                <li>Nombre: {{actorElegido.nombre}}</li>
+                <li>Apellido: {{ actorElegido.apellido }}</li>
+                <li>Sexo: {{actorElegido.sexo}}</li>
+                <li>Fecha nacimiento: {{actorElegido.fecha_de_nacimiento}}</li>                    
+            </ul>
+        </div>
+    </div>
+    <ng-template #noEligioActor>
+        <p>Aun no eligio actor</p>
+    </ng-template>
+    
+</div>

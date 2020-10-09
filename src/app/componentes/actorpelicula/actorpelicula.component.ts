@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Actor } from 'src/app/clases/actor';
 
 @Component({
-  selector: 'app-actor-listado',
-  templateUrl: './actor-listado.component.html',
-  styleUrls: ['./actor-listado.component.css']
+  selector: 'app-actorpelicula',
+  templateUrl: './actorpelicula.component.html',
+  styleUrls: ['./actorpelicula.component.css']
 })
-export class ActorListadoComponent implements OnInit {
+export class ActorpeliculaComponent implements OnInit {
 
   actorElegido: Actor;
-  mostrarCampos:boolean = false;
+  mostrarCampos: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -18,10 +18,6 @@ export class ActorListadoComponent implements OnInit {
   SeleccionarActor(actor: Actor){
     this.actorElegido = actor;
     this.mostrarCampos = true;
-  }
-
-  actualizar(recibido: boolean){
-    this.mostrarCampos = false;
   }
 
 }

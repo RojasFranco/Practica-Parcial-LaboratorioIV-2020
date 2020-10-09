@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Actor } from 'src/app/clases/actor';
 import { Pelicula } from 'src/app/clases/pelicula';
 import { FirebaseService } from 'src/app/servicios/firebase.service';
 import { ManejadorPeliculasService } from 'src/app/servicios/manejador-peliculas.service';
@@ -11,6 +12,7 @@ import { ManejadorPeliculasService } from 'src/app/servicios/manejador-peliculas
 export class TablaPeliculaComponent implements OnInit {
 
   listadoPeliculas: Array<Pelicula>;
+  @Input() actorPedido: Actor;
   @Output() eventElegirPelicula: EventEmitter<Pelicula> = new EventEmitter();
   constructor(private service: ManejadorPeliculasService, private bd: FirebaseService) { 
     this.listadoPeliculas = new Array<Pelicula>();

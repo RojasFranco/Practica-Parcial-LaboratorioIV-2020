@@ -22,6 +22,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';
 import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component';
 import { ActualizarActorComponent } from './componentes/actualizar-actor/actualizar-actor.component';
+import { ActorpeliculaComponent } from './componentes/actorpelicula/actorpelicula.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ActualizarActorComponent } from './componentes/actualizar-actor/actuali
     TablaPaisesComponent,
     DetalleActorComponent,
     ActualizarActorComponent,
+    ActorpeliculaComponent,
   ],
   imports: [
     BrowserModule,
